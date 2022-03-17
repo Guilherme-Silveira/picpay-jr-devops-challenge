@@ -35,8 +35,8 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             post_data = self.rfile.read(content_length)
             redishost = "redis"
             redisclient = redis.Redis(host=redishost)
-            #redisclient.set("SHAREDKEY",post_data.decode('utf-8'))
-            redisclient.set('SHAREDKEY', 'teste')
+            redisclient.set("SHAREDKEY",post_data.decode('utf-8'))
+            #redisclient.set('SHAREDKEY', 'teste')
 
 
 
