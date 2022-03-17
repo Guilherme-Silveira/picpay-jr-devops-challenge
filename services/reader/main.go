@@ -2,6 +2,7 @@ package main
 
 import (
     "fmt"
+    "log"
     "github.com/go-redis/redis"
     "github.com/rs/cors"
     "net/http"
@@ -26,12 +27,12 @@ func main() {
         key := client.Get("SHAREDKEY")
         fmt.Fprintf(writer, key.Val())
     })
-
+    
     handler := cors.New(cors.Options{
         AllowedOrigins: []string{"*"},
         AllowedHeaders: []string{"*"},
     }).Handler(mux)
 
-    http.ListenAndServe(":8080", handler)
+    log.Fatal(http.ListenAndServe(":8080", handler))
 
 }
