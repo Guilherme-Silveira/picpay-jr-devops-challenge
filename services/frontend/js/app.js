@@ -51,7 +51,9 @@ const readerhealth = (readerparagraph) => {
         method: "GET",
         mode: 'cors',
         headers: {
-            'Access-Control-Allow-Origin': '*'
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': '*',
+            'Access-Control-Allow-Headers': '*'
         },
     }).then( response => {
         response.text().then(body => {
@@ -72,7 +74,9 @@ const readerhealth = (readerparagraph) => {
         method: "GET",
         mode: 'cors',
         headers: {
-            'Access-Control-Allow-Origin': '*'
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': '*',
+            'Access-Control-Allow-Headers': '*'
         },
     }).then( response => {
         response.text().then(body => {
@@ -108,6 +112,7 @@ async function writeData(e) {
             'Access-Control-Allow-Origin': '*'
         },
     }).then( response => {
+        console.log(response)
 
     }).catch( error => {
         console.log(error)

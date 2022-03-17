@@ -21,7 +21,12 @@ services:
       - backend
   redis:
     image: "redis:alpine"
+    networks:
+      - backend
+      - frontend
 
 networks:
   backend:
+    driver: bridge
   frontend:
+    driver: bridge
