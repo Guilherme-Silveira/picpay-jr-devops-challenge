@@ -36,7 +36,6 @@ class RequestHandler(http.server.SimpleHTTPRequestHandler):
             redishost = "redis"
             redisclient = redis.Redis(host=redishost)
             redisclient.set("SHAREDKEY",post_data.decode('utf-8'))
-            #redisclient.set('SHAREDKEY', 'teste')
 
 
 
